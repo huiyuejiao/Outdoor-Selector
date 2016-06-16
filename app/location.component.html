@@ -1,0 +1,77 @@
+
+<div class="body" #body>
+<my-projectname [newproject1]="message"></my-projectname>
+<!--this means proojectname component is a child component compared to location componnet
+and we wanna pass variable "message" of parent component to child componnet
+in child component it is used as newproject1 
+we use newproject1 as the flag to determine which div should show up in child html-->
+<div class="outer-container" [hidden]="location">
+  
+  <div class="table-header effect">
+        <h3 class="table-title">Location</h3>
+        <div class="actions">
+          <p>Your location will tell us how much sun you get throughout the year</p>
+        </div>
+  </div> 
+  <div class="content">
+    <div class='login--form'>
+       <div class='map-section'>
+           <img class="Maps_icon"src="app/images/Maps_icon.png" alt="google map" (click)="showMaps()"/>
+       </div>
+       <div id="show" class="googlemap" *ngIf="showMap" #googlemap>
+           <span href="#" class="close-button" (click)="fadeout(googlemap)">&#10006;</span>
+           <div id="floating-panel">
+                <input id="address" type="textbox" [(ngModel)]="LocationAddress"
+                (keyup.enter)="showLatLog(LocationAddress)"
+                (blur)="showLatLog(LocationAddress)"
+                >
+           </div>
+           <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="8" (mapClick)="mapClicked($event)">
+             <sebm-google-map-marker [markerDraggable]="true"*ngShow=""
+                *ngIf="lat && lng && showMap"
+                [latitude]="lat"
+                 [longitude]="lng">
+             </sebm-google-map-marker>
+         </sebm-google-map>
+    
+         
+      </div >
+      <div class='search-section'>
+         <label>Search Address</label>
+          <form class="search-container">
+          <input placeholder='Please enter a paddress name'id="search-bar" type='text' [(ngModel)]="ChosenAddress" 
+         (focus)="showMap=true"
+         (keyup.enter)="showLatLog(ChosenAddress)"
+         (blur)="showLatLog(ChosenAddress)"
+         >
+         <span (click)="showLatLog(ChosenAddress)"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></span>
+        </form>
+        
+      </div>
+      <div class="continue-button">
+         <label></label>
+         <button class='button' id='call-to-action' (click)="goProject(body)" [disabled]="!ChosenAddress">
+           <span>Continue</span>
+         </button>
+     </div>
+     <div class="box"><br class="clear"></div>
+   </div>
+ </div> 
+</div>
+
+<div class="outer-container" [hidden]="!location">
+    <div class="table-header effect">
+        <h3 class="table-title">Location</h3>
+        <div class="actions">
+           <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" (click)="goLocation()"></i>
+        </div>
+    </div>
+    <div class="content">  
+        <label>Location:</label><p>{{location}}</p>
+        <label>Latitude:</label><p>{{latitude}}</p>
+        <label>Longitude:</label><p>{{longitude}}</p>
+    </div> 
+</div>
+
+
+</div>

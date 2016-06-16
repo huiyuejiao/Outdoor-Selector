@@ -1,0 +1,84 @@
+.project{
+  width:23%;
+  margin:0 auto;
+  float:left;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #1874CD;
+  font-size: 18px;
+  
+}
+input[type="radio"]{
+    width:15px;height:15px
+}
+.control-group ul li{
+    display: inline-block;
+    text-align: left;
+}
+.control-group {
+  text-align: left;
+  padding: 30px;
+  width: 70%;
+  margin:0 auto;
+  color:#1874CD;
+}
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 530;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+}
+.control--radio .control__indicator {
+  border-radius: 50%;
+  border:1px solid #7b7b7b;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #ccc;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: #fff;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+.control--radio .control__indicator:after {
+  left: 4px;
+  top: 4px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #2aa1c0;
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}

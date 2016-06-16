@@ -1,0 +1,63 @@
+
+<my-location [location]="location" [latitude]="latitude" [longitude]="longitude"></my-location>
+<div class="outer-container">
+    <div class="table-header effect">
+        <h3 class="table-title">Project</h3>
+        <div class="actions">
+          <p>{{title}}</p>
+        </div>
+    </div> 
+    <div class="content">  
+      <!--  <section class="project">
+        <label>
+     <a [routerLink]="['./Roadway']">Roadway</a> 
+             <input #parkinglot name="project" type="radio" value="parkinglot" (click)="project = parkinglot.value;chooseProject(project)" />
+           <input #parkinglot name="project" type="radio" value="Parking Lot" (click)="project = parkinglot.value;chooseProjectDetail(project)" />
+            Parking Lot
+            
+        </label>
+        </section>
+        <section class="project">
+        <label>
+          <!--  <a [routerLink]="['./Parkinglot']">Parkinglot</a> -->
+            <!--  <input #roadway name="project" type="radio"  value="roadway" (click)="project = roadway.value;chooseProject(project)" />
+            <input #roadway name="project" type="radio"  value="Road Way" (click)="project = roadway.value;chooseProjectDetail(project)" />
+            Road Way
+        </label>
+        </section>
+        <section class="project">
+        <label>
+            <!--  <input #pathway name="project" type="radio"  value="pathway" (click)="project = pathway.value" />
+            <input #pathway name="project" type="radio"  value="Pathway" (click)="project = pathway.value" />
+            Pathway
+        </label>
+        </section>
+        <section class="project">
+        <label>
+           <!--   <input #individualsystem name="project" type="radio"  value="individualsystem" (click)="project = individualsystem.value" />
+           <input #individualsystem name="project" type="radio"  value="Individual System" (click)="project = individualsystem.value" />
+            Individual System
+        </label>
+        </section>
+        <div style="clear:both">
+            Selected project is <strong>{{project}}</strong>
+        </div>
+         <label *ngFor="let item of projectItems">
+      <input type="radio" name="options" (click)="choosenproject = item;chooseProjectDetail(item)" 
+       [checked]="item === choosenproject">
+      {{item}}
+    </label>  -->      
+            <div class="control-group container">
+                  <ul class="row">
+                    <li  *ngFor="let item of projectItems" class="col-md-3">
+                        <label class="control control--radio">{{item}}
+                          <input type="radio" name="radio" (click)="choosenproject = item;chooseProjectDetail(item)" 
+                          [checked]="item === choosenproject" />
+                          <div class="control__indicator"></div>
+                        </label>
+                    </li>
+                   </ul>
+            </div>
+    </div> 
+</div>
+<!-- <router-outlet></router-outlet> -->

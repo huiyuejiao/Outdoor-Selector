@@ -1,0 +1,95 @@
+<my-project choosenproject="projectdetail"(projectDetailChange)="myprojectChange($event)"></my-project>
+<div class="outer-container"  #projectnamehide *ngIf="parkinglotShow">
+    <div class="table-header effect">
+        <h3 class="table-title">Detail</h3>
+        <div class="actions">
+          <p>{{projectdetail}}</p>
+        </div>
+    </div> 
+        <div class="content project-name">  
+        <p>Project Name</p>
+        <h4>{{projectname}}</h4>
+        <h4>{{location}}</h4>
+        <h4>{{latitude}}</h4>
+        <h4>{{longitude}}</h4>
+        <h4>{{projectdetail}}</h4>
+    </div> 
+</div>
+<div class="outer-container"  #projectnamehide *ngIf="roadwayShow">
+    <div class="table-header effect">
+        <h3 class="table-title">Detail</h3>
+        <div class="actions">
+          <p>{{projectdetail}}</p>
+        </div>
+    </div> 
+  <div class="content project-name">  
+    <p>Project Name</p>
+    <h4>{{projectname}}</h4>
+    <h4>{{location}}</h4>
+    <h4>{{latitude}}</h4>
+     <h4>{{longitude}}</h4>
+     <h4>{{projectdetail}}</h4>
+     <div>
+         <form name="parkinglot-form">
+         <div class="form-left left container">
+            <ul class="container leftUl">
+               <li class="row">
+                   <p class="col-md-3"> <label>Road Width(ft) </label><input type="number" name="points" min="1" max="100" /></p>
+                   <p class="col-md-3"> <label>Road Length(ft)</label><input type="text"> </p>
+                   <p class="col-md-3"> <label>Pole Configuration</label>
+                        <select class="single ">                
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>                      
+                        </select>
+                   </p>
+                   <p class="col-md-3"> <label>Lighting Requirements</label>
+                        <select class="single">                          
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>                     
+                        </select>
+                   </p>
+                </li>
+                <li class="row">
+                    <p class="col-md-2"> <label>Fixture Type</label>
+                            <select class="single classic ">
+                                <optgroup label="optgroup">
+                                    <option>option 1</option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                </optgroup>
+                            </select>
+                            
+                    </p>
+                    <p class="col-md-2"> <label>Temp</label><input type="text" name="points" min="1" max="100" /></p>
+                    <p class="col-md-2"> <label>Profile</label><input type="text"/></p>
+                    <p class="col-md-2"> <label>Tilt</label><input type="number" name="points" min="1" max="100"/></p>
+                    <p class="col-md-4"> <label>Days of Autonomy</label><input type="number" name="points" min="1" max="100" /></p> 
+                </li>
+             </ul> 
+            <div class="box"><br class="clear"></div>      
+          </div>
+          <div class="form-right pull-right container">
+              <label>Preferred Models</label>
+                   <!--  <select class="multiple"size="4">
+                         <optgroup label="optgroup">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                        </optgroup>
+                     </select> -->
+               <div class="modelOption">                      
+                    <label *ngFor="let item of models" class="control control--checkbox">{{item}}
+                          <input type="checkbox"/>
+                          <div class="control__indicator"></div>
+                    </label>
+                </div>          
+                <div class="box"><br class="clear"></div>
+          </div>
+          <div class="box"><br class="clear"></div>
+     </form>
+     <div class="box"><br class="clear"></div>
+     </div>    
+  </div> 
+</div>

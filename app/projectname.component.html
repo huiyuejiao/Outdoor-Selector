@@ -1,0 +1,49 @@
+
+<h4>{{message}}</h4>
+<div class="outer-container" [hidden]="newproject1" #projectnameshow>
+    <div class="table-header effect">
+        <h3 class="table-title">Name</h3>
+        <div class="actions">
+          <p>A project name will make it easy to reference your project in future</p>
+        </div>
+    </div>
+      <div class="content">        
+           <div class='login--form'>
+              <div class='exsiting-project'>
+                   <label>Select from Existing Projects</label>                  
+                   <select>
+                   <option *ngFor="let project of projects" [value]="project">{{project}}</option>
+                    </select>
+               </div>
+               <div class="or">
+                     <label></label>
+                     <p>OR</p>
+               </div>
+               <div class='new-project'>
+                     <label>Create a New Project Name</label>
+                     <input placeholder='Please enter a project name' type='text' [(ngModel)]="newproject">
+                </div>
+                <div class="continue-button">
+                <label></label>
+                <button class='button' id='call-to-action' (click)="gotoLocation(newproject,projectnameshow,projectnamehide)">
+                <span>Continue</span>
+                </button>
+                </div>
+                <div class="box"><br class="clear"></div>
+           </div>
+
+      </div> 
+</div>
+
+<div class="outer-container" [hidden]="!newproject1" #projectnamehide>
+    <div class="table-header effect">
+        <h3 class="table-title">Name</h3>
+        <div class="actions">
+          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" (click)="goProjectname()"></i>
+        </div>
+    </div> 
+  <div class="content project-name">  
+    <p>Project Name</p>
+    <h4>{{newproject1}}</h4>
+  </div> 
+</div>

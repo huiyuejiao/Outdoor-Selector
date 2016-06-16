@@ -1,0 +1,220 @@
+.container{
+    width:100%;
+}
+input{
+    border-radius: 4px;
+}
+form{
+    margin:0 auto;
+}
+form div.form-left {
+    float:left;
+    padding:20px; 
+    margin:0 auto;   
+}
+.form-left{
+    width:75%;
+}
+.form-right{
+    width:25%;
+}
+form ul.leftUl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+form ul.leftUl li {
+  margin: 0 0 0.25em 0;
+  clear: both;
+  display: inline-block;
+  width: 100%;
+}
+form ul.leftUl li p {
+  margin: 0;
+  padding: 0 0 0.5em 0.5em;
+  float: left;
+  text-align: left;
+}
+form label {
+  display: block;
+  margin: 0 0 0.5em 0;
+  color: #4f6fad;
+}
+form div.form-left input {
+  margin: 0 0 0.5em 0;
+  padding: 2px 5px;
+  color: #555;
+  font-size: 1em;
+  height:40px;
+  width:100%;
+  border: 1px solid #CFCFCF;
+  transition: border-width 0.2s ease;
+  border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 10px rgba(0,0,0,0.22);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 10px rgba(0,0,0,0.22);
+}
+input:focus,selet:focus{
+   box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.1);
+}
+form select{
+    width:100%;
+    border: 1px solid #CFCFCF;
+    transition: border-width 0.2s ease;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 10px rgba(0,0,0,0.22);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 10px rgba(0,0,0,0.22);
+}
+form select.single{
+    height:40px;
+}
+form label {
+  color:#999;
+  font-family:sans-serif;
+}
+.left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+.modelOption{
+  border: 2px solid #CFCFCF;
+  transition: border-width 0.2s ease;
+  border-radius: 3px;
+  padding: 5px 8px;
+  width:100%;
+  height:250px;
+  overflow: auto;
+  vertical-align: top;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  padding:0px;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #ccc;
+}
+.control input:checked ~ .control__indicator {
+  background: #2aa1c0;
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: #0e647d;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+select.classic {
+
+
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+
+/* select.classic {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #3276b1 50%),
+    linear-gradient(135deg, #3276b1 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    3em 3em;
+  background-repeat: no-repeat;
+}*/
+select.classic{
+   background-image:url("app/images/triangle-blue-down.png");
+   background-repeat:no-repeat;
+   background-size:14px auto;
+   background-position:7em 0.8em;
+}
+/*select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    3em 3em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}*/
+select.classic:focus{
+   background-image:url("app/images/triangle-blue.png");
+   background-repeat:no-repeat;
+   background-size:14px auto;
+   background-position:7em 0.8em;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
